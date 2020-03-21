@@ -1,0 +1,188 @@
+\documentclass[twoside,11pt,a4paper,]{book}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{palatino}
+\usepackage{mathpazo}
+\usepackage{hyperref}
+\usepackage{xspace}  
+\usepackage{lipsum}
+\usepackage{cite}
+\usepackage{lettrine} 
+\usepackage{eso-pic} 
+\usepackage{titlesec,titletoc}
+\usepackage{pifont}
+\usepackage{eurosym}
+\usepackage[french]{minitoc}
+\usepackage{setspace}
+
+\usepackage{fancyhdr}
+ \setlength{\headheight}{14.2pt}
+\renewcommand{\chaptermark}[1]{
+\markboth{\bsc{\chaptername~\thechapter{} :} #1}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\bsc{\thesection{}} #1}}
+ 
+ \usepackage[centertags,sumlimits,intlimits]{amsmath} 
+ \usepackage{amssymb,amsfonts,amsthm,amstext,amsopn,latexsym}
+ \usepackage{mathrsfs} 
+ \usepackage{pifont}
+ \usepackage{wasysym}
+
+\newtheorem{theoreme}{Théorème}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemme} {Lemme}[section]
+\newtheorem{corollaire}{Corollaire}[section]
+\newtheorem{exemple}{Exemple}[section]
+\newtheorem{remarque}{Remarque}[section]
+\newtheorem{definition}{Définition}[section]
+
+ \usepackage{floatflt}
+ \usepackage{float}
+ \usepackage{graphicx}
+  \usepackage{tabularx}
+ \usepackage{subfigure}
+ \usepackage{epsfig}
+  \usepackage{multicol}
+  \usepackage{multirow}
+
+
+
+ %%============================================================================
+%=================              PAGE          ===============================
+%%============================================================================
+
+ \usepackage{geometry}
+ \geometry{verbose,a4paper,
+   includeheadfoot,headheight=16pt,
+   textheight=235mm,textwidth=150mm,
+   vmarginratio=20:25,hmarginratio=20:25}
+ 
+
+  %% ============================================================================
+  %% =================            CAPTION         ===============================
+  %% ============================================================================
+
+  \usepackage{caption}
+  \captionsetup{figurename=Fig., tablename=Tab.,
+    labelformat=simple,font=footnotesize,format=plain,
+    justification= justified,
+    labelsep=endash,labelfont=bf}
+
+%% ============================================================================
+ %% =================         définir deux ligne horizontales     ===============================
+ %% ============================================================================ 
+
+\newcommand\HRule{\noindent\rule{\linewidth}{1.5pt}}
+\newcommand\HHRule{\noindent\rule{\linewidth}{1.5pt}}
+  %% ============================================================================
+  %% =================            Perso         =================================
+  %% ============================================================================
+
+  \newcommand{\couleur}{\textcolor{red}}
+ \def\boldmath{\mathversion{bold}}
+\def\bm#1{\mathchoice
+                                        {\mbox{\boldmath$\displaystyle#1$}}%
+          {\mbox{\boldmath$#1$}}%
+          {\mbox{\boldmath$\scriptstyle#1$}}%
+          {\mbox{\boldmath$\scriptscriptstyle#1$}}}
+           
+     % vitesse de déformation gamma
+   \newcommand{\gp}{\overset{.}{\gamma}}
+   % vitesse de déformation epsilon
+   \newcommand{\ep}{\overset{.}{\varepsilon}}
+   
+   \newcommand{\DDt}[1]{{\frac{\mathcal{D}{#1}}{\mathcal{D}{t}}}}
+   % dérivée corotationnelle
+   \newcommand{\dcr}[1]{{\stackrel{\circ}{\boldsymbol{#1}}}}
+   % dérivée convectée contravariante
+   \newcommand{\dct}[1]{{\stackrel{\triangledown}{\boldsymbol{#1}}}}
+   % dérivée convectée covariante
+   \newcommand{\dco}[1]{{\stackrel{\vartriangle}{\boldsymbol{#1}}}}
+   % dérivée de Gordon-Schowalter
+   \newcommand{\dgo}[1]{{\stackrel{\Box}{\boldsymbol{#1}}}}
+             
+  \newcommand{\vct}[1]{\boldsymbol{#1}}
+  \newcommand{\tns}[1]{\boldsymbol{#1}}
+    
+  \newcommand{\du}[1]{\mathrm{d}{#1}}
+  \newcommand{\dvt}[1]{\mathrm{d}{\boldsymbol{#1}}}
+    
+  \newcommand{\dfn}[2]{\partial^{#1}{#2}}
+  \newcommand{\dfd}[2]{\partial{{#1}}^{#2}}
+    
+  \newcommand{\dfg}[2]{\partial{#1}^{#2}}
+  \newcommand{\ddt}[1]{\frac{\mathrm{d}{#1}}{\mathrm{d}t}}
+  \newcommand{\dds}[2]{\frac{\mathrm{d}{#1}}{\mathrm{d}{#2}}}
+  \newcommand{\dtp}[1]{\frac{\partial{#1}}{\partial{t}}}
+  \newcommand{\dsp}[2]{\frac{\partial{#1}}{\partial{#2}}}
+
+
+ %%============================================================================
+ %% =================                 Annexes          ========================================
+ %% ============================================================================
+ 
+\usepackage[title,titletoc]{appendix}
+\renewcommand{\appendixtocname}{Annexe}
+
+ %% ============================================================================
+ %% =================         LE DOCUMENT          ========================================
+ %% ============================================================================ 
+
+\setcounter{minitocdepth}{2}
+\setlength{\mtcindent}{24pt}
+\renewcommand{\mtcfont}{\small\rm}
+\renewcommand{\mtcSfont}{\small\bf}
+
+\begin{document}
+
+\input{Pagarde/Pagedegarde}
+\Makepagedegarde
+
+\input{Dedicace/Dedicace}
+\input{Merci/Remerci}
+
+
+\tableofcontents
+
+\input{Notations/notations}  
+
+\input{Texte/Introduction}
+%% ============================================================================ 
+
+\input{Partie/partI} 	 
+\input{Texte/Chap1}         
+\input{Texte/Chap2}        
+\input{Texte/Chap3}        
+
+%% ============================================================================ 
+
+
+\input{Partie/partII}          
+\input{Texte/Chap4}     
+\input{Texte/Chap5}     
+\input{Texte/Chap6}     
+
+%% ============================================================================ 
+
+\input{Partie/partIII}          
+\input{Texte/Chap7}     
+\input{Texte/Chap8}     
+\input{Texte/Chap9}     
+
+%% ============================================================================ 
+
+
+\addcontentsline{toc}{chapter}{Annexes}
+\appendix
+\input{Texte/Annexe}      
+
+%% ============================================================================ 
+
+\addcontentsline{toc}{chapter}{Bibliographie}
+\renewcommand{\bibname}{Bibliographie}
+\bibliographystyle{plain}
+\bibliography{Biblio/Reference}
+
+\input{PageCouv/Resume}      
+
+\end{document}
+
