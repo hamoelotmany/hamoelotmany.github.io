@@ -1,0 +1,141 @@
+\makeatletter
+\def\@ecole{\'ecole}
+\newcommand{\ecole}[1]{
+\def\@ecole{#1}
+}
+ 
+\def\@specialite{Sp\'ecialit\'e}
+\newcommand{\specialite}[1]{
+\def\@specialite{#1}
+}
+ 
+\def\@ED{\'{E}cole Doctorale}
+\newcommand{\ED}[1]{
+\def\@ED{#1}
+}
+ 
+\def\@doctorat{Doctorat}
+\newcommand{\doctorat}[1]{
+\def\@doctorat{#1}
+}
+ 
+\def\@adresse{Adresse}
+\newcommand{\adresse}[1]{
+\def\@adresse{#1}
+}
+ 
+\def\@directrice{directrice}
+\newcommand{\directrice}[1]{
+\def\@directrice{#1}
+}
+ 
+\def\@directeur{directeur}
+\newcommand{\directeur}[1]{
+\def\@directeur{#1}
+}
+\def\@jurya{}{}{}{}
+\newcommand{\jurya}[4]{
+\def\@jurya{#1 & #2 & #3 & #4\\}
+}
+\def\@juryb{}{}{}{}
+\newcommand{\juryb}[4]{
+\def\@juryb{#1 & #2 & #3 & #4\\}
+}
+\def\@juryc{}{}{}{}
+\newcommand{\juryc}[4]{
+\def\@juryc{#1 & #2 & #3 & #4\\}
+}
+\def\@juryd{}{}{}{}
+\newcommand{\juryd}[4]{
+\def\@juryd{#1 & #2 & #3 & #4\\}
+}
+\def\@jurye{}{}{}{}
+\newcommand{\jurye}[4]{
+\def\@jurye{#1 & #2 & #3 & #4\\}
+}
+\def\@juryf{}{}{}{}
+\newcommand{\juryf}[4]{
+\def\@juryf{#1 & #2 & #3 & #4 \\}
+}
+\def\@juryg{}{}{}{}
+\newcommand{\juryg}[4]{
+\def\@juryg{#1 & #2 & #3 & #4\\}
+}
+\def\@juryh{}{}{}{}
+\newcommand{\juryh}[4]{
+\def\@juryh{#1 & #2 & #3\\}
+}
+\def\@juryi{}{}{}{}
+\newcommand{\juryi}[4]{
+\def\@juryi{#1 & #2 & #3\\}
+}
+\def\@juryr{}{}{}{}
+\newcommand{\juryr}[4]{
+\def\@juryr{#1 & #2 & #3\\}
+}
+\def\@juryv{}{}{}{}
+\newcommand{\juryv}[4]{
+\def\@juryv{#1 & #2 & #3\\}
+}
+
+ 
+\makeatletter
+\newcommand{\Makepagedegarde}{
+       \newgeometry{top=2.5cm, bottom=1cm, left=2cm, right=1cm}
+      \begin{titlepage}
+            \begin{center}
+            \hspace*{.2cm}\includegraphics[width=0.3\textwidth]{Pagarde/uppa.png}
+           \hfill
+           \hspace*{-.2cm}\includegraphics[width=0.1\textwidth]{Pagarde/cnrs.jpg}\\
+          \vspace{1cm}
+          {\Large \@ED}\\
+          \vspace{1cm}
+         {\huge
+               {\bfseries \@doctorat}  }\\
+          \vspace{1cm}
+         { pr\'esent\'ee pour obtenir le grade de }\\
+         \vspace{1cm}
+         {\huge\bfseries DOCTEUR}\\
+         \vspace{1cm}
+         {\textsc{\huge\bfseries De l'\@ecole}}\\
+         \vspace{0.5cm}
+         {\Large{\bfseries \textit{ Sp\'ecialit\'e : \@specialite }}}\\
+         \vspace{1cm}
+         { par }\\
+          \vspace{.6cm}
+           {\Large {\bfseries \@author}} \\
+           \HRule  \\ \vspace*{.5cm} 
+            {\LARGE \bfseries{\@title}} \\
+            \HRule \\
+             \vspace{.5cm}
+             {soutenue publiquement le 9 novembre 2015} \\ %\@date
+             \end{center}
+\textbf{\underline{Apr\`es avis de : }}\\
+\vspace*{.55cm} 
+       \begin{tabular}{llll}
+               \@juryr
+               \@juryv
+        \end{tabular}\\
+\textbf{\underline{Devant la commission d'examen compos\'ee de : }}\\
+\vspace*{.55cm} 
+        \begin{tabular}{llll}
+               \@jurya
+               \@juryb
+               \@juryc
+               \@juryd
+               \@jurye
+               \@juryf
+               \@juryg
+               \@juryh
+               \@juryi
+         \end{tabular}
+          \vfill
+          \centering
+         \@adresse
+    \end{titlepage}
+ 
+ 
+ 
+ 
+ \restoregeometry
+} 
